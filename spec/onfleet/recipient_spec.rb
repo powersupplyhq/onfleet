@@ -18,6 +18,21 @@ RSpec.describe Onfleet::Recipient do
         ).to have_been_made.once
       end
     end
+
+    context "with the `skip_phone_number_validation` attribute" do
+      set_up_request_stub(:post, 'recipients')
+      let(:params) { { skip_phone_number_validation: true } }
+      let(:response_body) { { id: 'an-object' } }
+
+      it "should camelize the attribute name properly" do
+        subject.call
+        expect(
+          a_request(:post, url).with(
+            body: { 'skipPhoneNumberValidation' => true }.to_json
+          )
+        ).to have_been_made.once
+      end
+    end
   end
 
   describe ".get" do
@@ -72,4 +87,3 @@ RSpec.describe Onfleet::Recipient do
     end
   end
 end
-

@@ -31,10 +31,11 @@ RSpec.describe Onfleet::Task do
       let(:response_body) { { id: 'an-object' } }
 
       it "should camelize the attribute name properly" do
-        pending('The SMS acronym does not camelize consistently')
         subject.call
         expect(
-          a_request(:post, url).with(body: { recipientSkipSMSNotifications: true }.to_json)
+          a_request(:post, url).with(
+            body: { recipientSkipSMSNotifications: true }.to_json
+          )
         ).to have_been_made.once
       end
     end
@@ -80,10 +81,14 @@ RSpec.describe Onfleet::Task do
       let(:response_body) { { id: 'an-object' } }
 
       it "should camelize the attribute name properly" do
-        pending('The SMS acronym does not camelize consistently')
         subject.call
         expect(
-          a_request(:put, url).with(body: { recipientSkipSMSNotifications: true }.to_json)
+          a_request(:put, url).with(
+            body: {
+              id: params[:id],
+              recipientSkipSMSNotifications: true
+            }.to_json
+          )
         ).to have_been_made.once
       end
     end

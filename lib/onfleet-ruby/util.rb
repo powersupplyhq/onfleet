@@ -2,7 +2,11 @@ require 'active_support/core_ext/string/inflections'
 
 module Onfleet
   class Util
-    SPECIAL_PARSE = { 'skip_sms_notifications' => 'skipSMSNotifications' }.freeze
+    SPECIAL_PARSE = {
+      'skip_sms_notifications' => 'skipSMSNotifications',
+      'skip_phone_number_validation' => 'skipPhoneNumberValidation',
+      'recipient_skip_sms_notifications' => 'recipientSkipSMSNotifications'
+    }.freeze
 
     def self.constantize(class_name)
       Object.const_get(class_name)
@@ -34,4 +38,3 @@ module Onfleet
     end
   end
 end
-
