@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.rubygems_version = "3.5.22".freeze
   s.summary = "Onfleet ruby api".freeze
-  s.test_files = ["spec/onfleet/admin_spec.rb".freeze, "spec/onfleet/destination_spec.rb".freeze, "spec/onfleet/organization_spec.rb".freeze, "spec/onfleet/recipient_spec.rb".freeze, "spec/onfleet/task_spec.rb".freeze, "spec/onfleet/team_spec.rb".freeze, "spec/onfleet/webhook_spec.rb".freeze, "spec/onfleet/worker_spec.rb".freeze, "spec/spec_helper.rb".freeze, "spec/support/http_requests/shared_examples.rb".freeze]
 
   s.installed_by_version = "3.5.22".freeze
 
